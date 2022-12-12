@@ -1,0 +1,405 @@
+body {
+    background-image: url(/img/Afbeelding7.png);
+    font-family: 'Algerian', cursive;
+}
+
+
+.player1{
+width: 250px;
+ height: 150px;
+background-color: blueviolet;
+/* margin-left: 300px;
+    margin-top: 100px; */
+ float: left;
+ font-size: 30px;
+}
+.player2{
+ width: 250px;
+ height: 150px;
+ background-color: red;
+float: right;
+/* margin-left: 1150px;
+    margin-top: -150px; */
+font-size: 30px;
+}
+
+
+.demo{
+    margin-left: 600px;
+    width:400px;
+    height:400px;
+    font-size:5em;
+    text-align:center;
+  }
+
+.rainbow{
+    animation: rainbow 2.5s linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes rainbow-bg{
+    100%,0%{
+        background-color: rgb(255,0,0);
+    }
+    8%{
+        background-color: rgb(255,127,0);
+    }
+    16%{
+        background-color: rgb(255,255,0);
+    }
+    25%{
+        background-color: rgb(127,255,0);
+    }
+    33%{
+        background-color: rgb(0,255,0);
+    }
+    41%{
+        background-color: rgb(0,255,127);
+    }
+    50%{
+        background-color: rgb(0,255,255);
+    }
+    58%{
+        background-color: rgb(0,127,255);
+    }
+    66%{
+        background-color: rgb(0,0,255);
+    }
+    75%{
+        background-color: rgb(127,0,255);
+    }
+    83%{
+        background-color: rgb(255,0,255);
+    }
+    91%{
+        background-color: rgb(255,0,127);
+    }
+}
+@keyframes rainbow{
+    100%,0%{
+        color: rgb(255,0,0);
+    }
+    8%{
+        color: rgb(255,127,0);
+    }
+    16%{
+        color: rgb(255,255,0);
+    }
+    25%{
+        color: rgb(127,255,0);
+    }
+    33%{
+        color: rgb(0,255,0);
+    }
+    41%{
+        color: rgb(0,255,127);
+    }
+    50%{
+        color: rgb(0,255,255);
+    }
+    58%{
+        color: rgb(0,127,255);
+    }
+    66%{
+        color: rgb(0,0,255);
+    }
+    75%{
+        color: rgb(127,0,255);
+    }
+    83%{
+        color: rgb(255,0,255);
+    }
+    91%{
+        color: rgb(255,0,127);
+    }
+}
+
+.wrapper {
+    background-color: white;
+    background-color: black;
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    grid-template-rows: repeat(12, 40px);
+    /* padding: 10px; */
+    width: 385px;
+    height: 450px;
+    grid-gap: 10px;
+    margin: 0 auto;
+    margin-top: -130px;
+    margin-left: 610px;
+}
+
+
+
+.box {
+    background-color: #c0ccb5;
+    background-color: white;
+    font-size: 130px;
+    text-align: center;
+    line-height: 120px;
+    padding: 10px;
+}
+
+.div2 {
+    grid-row: 1/4;
+    grid-column: 1/2;
+    cursor: pointer;
+}
+
+.div2:hover {
+ background-color: black;
+ border: 2px solid red;
+ transition: 0.3s;
+}
+
+.div2:hover {
+ animation: pulse 1s infinite;
+ transition: .3s;
+}
+
+@keyframes pulse {
+ 0% {
+ transform: scale(1);
+ }
+ 70% {
+transform: scale(.9);
+ }
+100% {
+ transform: scale(1);
+}
+}
+
+.div3 {
+ grid-column: 2/3;
+ grid-row: 1/4;
+ cursor: pointer;
+}
+
+
+
+.div3:hover {
+background-color: black;
+border: 2px solid green;
+transition: 0.3s;
+}
+
+.div3:hover {
+animation: pulse 1s infinite;
+ transition: .3s;
+}
+
+@keyframes pulse {
+ 0% {
+ transform: scale(1);
+ }
+ 70% {
+transform: scale(.9);
+ }
+ 100% {
+ transform: scale(1);
+ }
+}
+
+.div4 {
+ grid-column: 3/4;
+ grid-row: 1/4;
+ cursor: pointer;
+}
+
+.div4:hover {
+ background-color: black;
+ border: 2px solid yellow;
+ transition: 0.3s;
+}
+
+.div4:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     }
+    }
+
+
+.div6 {
+ grid-row: 4/7;
+ grid-column: 1/2;
+ cursor: pointer;
+}
+
+.div6:hover {
+ background-color: rgb(0, 0, 0);
+ border: 2px solid rgb(0, 217, 255);
+ transition: 0.3s;
+}
+
+.div6:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     }
+    }
+
+.div7 {
+ grid-row: 4/7;
+ grid-column: 2/3;
+ cursor: pointer;
+}
+
+.div7:hover {
+ background-color: black;
+ border: 2px solid blueviolet;
+ transition: 0.3s;
+}
+
+.div7:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     }
+    }
+
+.div8 {
+ grid-row: 4/7;
+grid-column: 3/4;
+ cursor: pointer;
+}
+
+.div8:hover {
+ background-color: black;
+ border: 2px solid rgb(247, 0, 255);
+ transition: 0.3s;
+}
+.div8:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     }
+    }
+
+.div9 {
+ grid-row: 7/10;
+grid-column: 1/2;
+ cursor: pointer;
+}
+
+.div9:hover {
+ background-color: black;
+ border: 2px solid rgb(0, 255, 106);
+ transition: 0.3s;
+}
+.div9:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     }
+    }
+
+.div10 {
+ grid-row: 7/10;
+ grid-column: 2/3;
+ cursor: pointer;
+}
+
+.div10:hover {
+ background-color: black;
+ border: 2px solid rgb(51, 77, 9);
+ transition: 0.3s;
+}
+.div10:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     } 
+    }
+
+.div11 {
+grid-row: 7/10;
+ grid-column: 3/4;
+ cursor: pointer;
+}
+
+
+.div11:hover {
+ background-color: black;
+ border: 2px solid rgb(255, 136, 0);
+ transition: 0.3s;
+}
+.div11:hover {
+    animation: pulse 1s infinite;
+     transition: .3s;
+    }
+    @keyframes pulse {
+     0% {
+     transform: scale(1);
+     }
+     70% {
+    transform: scale(.9);
+     }
+     100% {
+     transform: scale(1);
+     }
+    }
+    
+.resetName {
+    width: 70px;
+    height: 50px;
+    left: 800px;
+    
+}
