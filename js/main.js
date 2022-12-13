@@ -4,6 +4,8 @@ myBtn.addEventListener('click', myFunction);
 const playerOneLabel = document.querySelector('.player1');
 const playerTwoLabel = document.querySelector('.player2');
 
+const winningMessageElement = document.getElementsByClassName('winningmessage')
+
 let player1Points = 0;
 let player2Points = 0;
 let playerOneName = "";
@@ -27,6 +29,8 @@ for(let i = 0; i < fields.length;  i++){
 	field.addEventListener('click', function() {
 		boxClicked(i);
 	});
+
+
 }
 const winningConditions = [
 	[0, 1, 2],
@@ -76,6 +80,22 @@ function myFunction(){
 	playerTwoLabel.innerHTML += 'Score:'+ player2Points;
 }
 
+function endGame(draw) {
+	if (draw) {
+		winningmessagetextElement.innerText = "Het is gelijkspel"
+	} else {
+		winningmessagetextElement.innerText = `speler met ${playerTurn ? "O's" : "X's"}wins!`
+	}
+	winningMessageElement.classList.add('show')
+}
+
+function checkWin(currentClass) {
+	return WINNING_COMBINATIONS.some(combination => {
+		return combination.every(index => {
+			return cellElements[index].classList.contains(currentClass)
+		})
+	})
+}
 
 
 
