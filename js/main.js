@@ -80,22 +80,7 @@ function myFunction(){
 	playerTwoLabel.innerHTML += 'Score:'+ player2Points;
 }
 
-function endGame(draw) {
-	if (draw) {
-		winningmessagetextElement.innerText = "Het is gelijkspel"
-	} else {
-		winningmessagetextElement.innerText = `speler met ${playerTurn ? "O's" : "X's"}wins!`
-	}
-	winningMessageElement.classList.add('show')
-}
 
-function checkWin(currentClass) {
-	return WINNING_COMBINATIONS.some(combination => {
-		return combination.every(index => {
-			return cellElements[index].classList.contains(currentClass)
-		})
-	})
-}
 
 
 
