@@ -46,23 +46,20 @@ const winningConditions = [
 
 
 function boxClicked(index) {
+	const field = fields[index];
 	if (playerTurn == 1 && playfieldArray[index] == false) {
 		//speler 1(X)
 		currentPlayer = "X";
 		playerTurn = 2;
 		playfieldArray[index] = `X`;
+		field.textContent = currentPlayer;
 	} else if (playerTurn == 2 && playfieldArray[index] == false) {
 		//speler 2 (O)
 		currentPlayer = "O";
 		playerTurn = 1;
 		playfieldArray[index] = `O`;
+		field.textContent = currentPlayer;
 	}
-
-	const field = fields[index];
-
-	field.textContent = currentPlayer;
-
-
 }
 
 

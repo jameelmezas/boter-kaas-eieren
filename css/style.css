@@ -25,7 +25,7 @@ font-size: 30px;
 
 
 .demo{
-    margin-left: 700px;
+    margin-left: 600px;
     width:400px;
     height:400px;
     font-size:5em;
@@ -126,7 +126,7 @@ font-size: 30px;
     grid-gap: 10px;
     margin: 0 auto;
     margin-top: -130px;
-    margin-left: 710px;
+    margin-left: 610px;
 }
 
 
@@ -401,8 +401,13 @@ grid-row: 7/10;
     width: 70px;
     height: 50px;
     left: 800px;
-    
 }
+
+/* .resetboard {
+    width: 70px;
+    height: 50px;
+    left: 800px;
+} */
 
 .winningmessage {
 	display: none;
