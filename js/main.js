@@ -6,8 +6,8 @@ const playerTwoLabel = document.querySelector('.player2');
 
 const winningMessageElement = document.getElementsByClassName('winningmessage')
 
-let player1Points = 0;
-let player2Points = 0;
+let player1symbol = `X`;
+let player2symbol = `O`;
 let playerOneName = "";
 let playerTwoName = "";
 let currentPlayer = "X"
@@ -30,18 +30,46 @@ for(let i = 0; i < fields.length;  i++){
 		boxClicked(i);
 	});
 
-
+	checkWinner();
 }
-const winningConditions = [
-	[0, 1, 2],
-	[3, 4, 5],
-	[6, 7, 8],
-	[0, 3, 6],
-	[1, 4, 7],
-	[2, 5, 8],
-	[0, 4, 8],
-	[2, 4, 6],
-];
+function checkWinner(currentPlayer) {
+let winningConditions = [
+	[0, 1, 2],// First horizontal row
+	[3, 4, 5],// Second horizontal row
+	[6, 7, 8],// Third horizontal row
+	[0, 3, 6],// First vertical row
+	[1, 4, 7],// Second vertical row
+	[2, 5, 8],// Third vertical row
+	[0, 4, 8],// First diagonal row
+	[2, 4, 6],// Second diagonal row
+]
+
+for(let i = 0; i < winningConditions.length; i++) {
+	let matchCounter = 0; 
+
+	
+	const firstSymbol = fields[winningConditions[i][0]].textContent; 
+
+	
+	for(let j = 0; j < winningConditions[i].length; j++) {
+		
+		const currentSymbol = fields[winningConditions[i][j]].textContent;
+
+		if(currentSymbol === "" || firstSymbol !== currentSymbol) { 
+			break; 
+		} else { 
+			matchCounter++;
+		} 
+	}
+
+	if(matchCounter == 3) {
+		alert(`Player ${firstSymbol} won!`); 
+
+		return; 
+	}
+}
+}
+
 
 
 
@@ -72,11 +100,11 @@ function changePlayer() {
 function myFunction(){
 	playerOneName = prompt(' in wat wil je Speler 1 naam veranderen');
     playerOneLabel.innerHTML = 'Player 1:' + playerOneName + "<br>";
-	playerOneLabel.innerHTML += 'Score:'+ player1Points;
+	playerOneLabel.innerHTML += 'Symbol:'+ player1symbol;
 
     playerTwoName = prompt('in wat wil je Speler 2 naam veranderen');
     playerTwoLabel.innerHTML = 'Player 2:' + playerTwoName + "<br>";
-	playerTwoLabel.innerHTML += 'Score:'+ player2Points;
+	playerTwoLabel.innerHTML += 'Symbol:'+ player2symbol;
 }
 
 
