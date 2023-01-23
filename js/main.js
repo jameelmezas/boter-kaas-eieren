@@ -19,19 +19,19 @@ resetButton.addEventListener("click", resetBoard); // Add an event listener to t
 
 
 
-const playerOneLabel = document.querySelector('.player1');
-const playerTwoLabel = document.querySelector('.player2');
+const playerOneLabel = document.querySelector('.player1');//speler1 naam veranderen
+const playerTwoLabel = document.querySelector('.player2');//speler2 naam veranderen
 
 const winningMessageElement = document.getElementsByClassName('winningmessage')
 
-let player1symbol = `X`;
-let player2symbol = `O`;
-let playerOneName = "";
-let playerTwoName = "";
+let player1symbol = `X`;//symbolX
+let player2symbol = `O`;//symbolO
+let playerOneName = "";//naam van speler
+let playerTwoName = "";//naam van speler2
 let currentPlayer = "X"
-let gameEnded = false;
+let gameEnded = false;//alles word false als je reset klikt
 
-let playerTurn = 1;
+let playerTurn = 1;//veranderd wie speelt
 
 let playfieldArray = [false, false, false, false, false, false, false, false, false];
 
@@ -45,7 +45,7 @@ for (let i = 0; i < fields.length; i++) {
 
 	console.log(field);
 	field.textContent = "";
-	field.addEventListener('click', function () {
+	field.addEventListener('click', function () {//zorgt voor dat als 
 		boxClicked(i);
 	});
 
@@ -64,20 +64,20 @@ function checkWinner(currentPlayer) {
 		[2, 4, 6],// Second diagonal row
 	]
 
-	for (let i = 0; i < winningConditions.length; i++) {
+	for (let i = 0; i < winningConditions.length; i++) {//i wordt verhoogd met 1
 		let matchCounter = 0;
 
 
 		const firstSymbol = fields[winningConditions[i][0]].textContent;
 
-		const array = winningConditions[i];
+		const array = winningConditions[i];//win mogelijkheden
 		//n is number
-		let nOne = array[0];
-		let nTwo = array[1];
-		let nThree = array[2];
-
+		let nOne = array[0];//rij1
+		let nTwo = array[1];//rij2
+		let nThree = array[2];//rij3
+        //dubbel && staat gewoon voor en  // == is gelijk aan
 		if (playfieldArray[nOne] == currentPlayer && playfieldArray[nTwo] == currentPlayer && playfieldArray[nThree] == currentPlayer) {
-			alert(currentPlayer + " wint!");
+			alert(currentPlayer + " wint!");//als er 3 zelfde symbolen zijn dan win je
 			gameEnded = true;
 		}
 
@@ -111,9 +111,9 @@ function boxClicked(index) {
 	if (gameEnded == false) {
 		if (playerTurn == 1 && playfieldArray[index] == false) {
 			//speler 1(X)
-			currentPlayer = "X";
-			playerTurn = 2;
-			playfieldArray[index] = `X`;
+			currentPlayer = "X";//nu gespeelde speler
+			playerTurn = 2;//gaat naar de volgende speler
+			playfieldArray[index] = `X`;//gespeelde symbool
 			field.textContent = currentPlayer;
 			checkWinner(`X`);
 		} else if (playerTurn == 2 && playfieldArray[index] == false) {
@@ -138,7 +138,7 @@ function changePlayer() {
 function myFunction() {
 	playerOneName = prompt(' in wat wil je Speler 1 naam veranderen');
 	playerOneLabel.innerHTML = 'Player 1:' + playerOneName + "<br>";
-	playerOneLabel.innerHTML += 'Symbol:' + player1symbol;
+	playerOneLabel.innerHTML += 'Symbol:' + player1symbol;//zorgt voor  de scoreboard en veranderd de naam
 
 	playerTwoName = prompt('in wat wil je Speler 2 naam veranderen');
 	playerTwoLabel.innerHTML = 'Player 2:' + playerTwoName + "<br>";
